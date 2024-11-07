@@ -1,3 +1,5 @@
+import ContainerPresentational from "./components/ContainerPresentational/ContainerPresentational";
+
 function App() {
   return (
     <>
@@ -8,6 +10,10 @@ function App() {
         >
           React Patterns
         </h1>
+
+        <hr />
+
+        <ContainerPresentational />
       </main>
     </>
   );
