@@ -1,6 +1,12 @@
-import ContainerPresentational from "./components/ContainerPresentational/ContainerPresentational";
+import DogImage from "./components/ContainerPresentational/DogImage";
+import withLoader from "./components/hocs/withLoader";
 
 function App() {
+  const ImagesWithLoader = withLoader(
+    DogImage,
+    "https://dog.ceo/api/breed/labrador/images/random/6"
+  );
+
   return (
     <>
       <main className="container ">
@@ -10,10 +16,9 @@ function App() {
         >
           React Patterns
         </h1>
-
         <hr />
-
-        <ContainerPresentational />
+        {/* <DogImage /> */}
+        <ImagesWithLoader />
       </main>
     </>
   );

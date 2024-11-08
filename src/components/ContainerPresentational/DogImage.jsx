@@ -1,5 +1,12 @@
-const DogImage = ({ dogs }) => {
-  return dogs.map((dog, i) => <img key={i} src={dog} alt="Dog" />);
-};
+import withLoader from "../hocs/withLoader";
 
-export default DogImage;
+function DogImage(props) {
+  return props.data.message?.map((dog, index) => (
+    <img src={dog} alt="Dog" key={index} />
+  ));
+}
+
+export default withLoader(
+  DogImage,
+  "https://dog.ceo/api/breed/labrador/images/random/6"
+);
